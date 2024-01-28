@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    width: 400px;
+    border-radius: 5px;
+    margin: 50px;
+    box-shadow: 0 0 10px black;
+    position: relative;
+}
+
+.image-container {
+    width: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+.details-container {
+    padding: 20px 10px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transition: .6s;
+}
+
+.details-name p {
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.details-rating {
+    margin-top: 10px;
+}
+
+.details-rating i {
+    color: rgb(237, 237, 33);
+}
+
+.details-rating span {
+    font-weight: 700;
+}
+
+.details-price {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.image-container:hover~.details-container {
+    opacity: 1;
+}

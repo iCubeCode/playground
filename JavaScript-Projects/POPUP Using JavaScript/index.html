@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POPUP</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="container--header">
+            <span>POPUP</span>
+            <ul>
+                <li>Home</li>
+                <li>About Us</li>
+                <li onclick="OpenPOPUP()">Login</li>
+            </ul>
+        </div>
+        <div class="container--content">
+            <h2>Heading 1</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus quos aliquid ducimus. Placeat
+                assumenda dignissimos cum velit consequuntur magnam consectetur dolorem, fuga cupiditate omnis est
+                reprehenderit aspernatur debitis vero praesentium recusandae odit, necessitatibus rem nobis quia! Unde
+                vel, quibusdam saepe possimus odit ratione veritatis recusandae eaque libero sint in quos cupiditate
+                accusantium commodi itaque similique deleniti, debitis asperiores beatae perferendis illo fugiat. Labore
+                facere dolores ipsam sit quibusdam corporis id modi sequi soluta commodi aperiam possimus qui voluptatum
+                rerum mollitia, ex consectetur? Error laboriosam in quaerat dolorum tenetur beatae temporibus
+                voluptatibus veniam unde accusantium, excepturi labore. Aperiam repellat nesciunt dolore.</p>
+            <h2>Heading 2</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus quos aliquid ducimus. Placeat
+                assumenda dignissimos cum velit consequuntur magnam consectetur dolorem, fuga cupiditate omnis est
+                reprehenderit aspernatur debitis vero praesentium recusandae odit, necessitatibus rem nobis quia! Unde
+                vel, quibusdam saepe possimus odit ratione veritatis recusandae eaque libero sint in quos cupiditate
+                accusantium commodi itaque similique deleniti, debitis asperiores beatae perferendis illo fugiat. Labore
+                facere dolores ipsam sit quibusdam corporis id modi sequi soluta commodi aperiam possimus qui voluptatum
+                rerum mollitia, ex consectetur? Error laboriosam in quaerat dolorum tenetur beatae temporibus
+                voluptatibus veniam unde accusantium, excepturi labore. Aperiam repellat nesciunt dolore.</p>
+            <h2>Heading 3</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus quos aliquid ducimus. Placeat
+                assumenda dignissimos cum velit consequuntur magnam consectetur dolorem, fuga cupiditate omnis est
+                reprehenderit aspernatur debitis vero praesentium recusandae odit, necessitatibus rem nobis quia!
+                Unde
+                vel, quibusdam saepe possimus odit ratione veritatis recusandae eaque libero sint in quos cupiditate
+                accusantium commodi itaque similique deleniti, debitis asperiores beatae perferendis illo fugiat.
+                Labore
+                facere dolores ipsam sit quibusdam corporis id modi sequi soluta commodi aperiam possimus qui
+                voluptatum
+                rerum mollitia, ex consectetur? Error laboriosam in quaerat dolorum tenetur beatae temporibus
+                voluptatibus veniam unde accusantium, excepturi labore. Aperiam repellat nesciunt dolore.</p>
+            <h2>Heading 3</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus quos aliquid ducimus. Placeat
+                assumenda dignissimos cum velit consequuntur magnam consectetur dolorem, fuga cupiditate omnis est
+                reprehenderit aspernatur debitis vero praesentium recusandae odit, necessitatibus rem nobis quia!
+                Unde
+                vel, quibusdam saepe possimus odit ratione veritatis recusandae eaque libero sint in quos cupiditate
+                accusantium commodi itaque similique deleniti, debitis asperiores beatae perferendis illo fugiat.
+                Labore
+                facere dolores ipsam sit quibusdam corporis id modi sequi soluta commodi aperiam possimus qui
+                voluptatum
+                rerum mollitia, ex consectetur? Error laboriosam in quaerat dolorum tenetur beatae temporibus
+                voluptatibus veniam unde accusantium, excepturi labore. Aperiam repellat nesciunt dolore.</p>
+        </div>
+    </div>
+
+    <div class="popup--container popup--none" id="popup">
+
+        <div class="popup--card">
+
+            <div class="popup--card--header">
+                <span>Login</span>
+            </div>
+            <div class="popup--card--content">
+                <div class="card-field">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter Username">
+                </div>
+                <div class="card-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter Password">
+                </div>
+            </div>
+            <div class="popup--card--action">
+                <button onclick="closePOPUP()">Cancel</button>
+                <button>Login</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="./index.js"></script>
+
+</body>
+
+</html>

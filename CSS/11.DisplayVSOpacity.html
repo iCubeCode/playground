@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display VS Opacity VS Visiblity</title>
+    <style>
+        .container {
+            border: 2px solid grey;
+            width: 100px;
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+
+        }
+
+        .btn-1 {
+            display: none;
+            cursor: pointer;
+        }
+
+        .btn-2 {
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .btn-3 {
+            visibility: hidden;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h3>Display</h3>
+        <button class="btn-1">Click</button>
+    </div>
+    <div class="container">
+        <h3>Opacity</h3>
+        <button class="btn-2">Click</button>
+    </div>
+    <div class="container">
+        <h3>Visibility</h3>
+        <button class="btn-3">Click</button>
+    </div>
+
+</body>
+
+</html>

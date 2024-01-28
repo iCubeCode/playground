@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .loader {
+            width: 200px;
+            height: 200px;
+            border: 15px solid #989898;
+            border-radius: 50%;
+            border-top: 15px solid #363636;
+            animation: loading 2s infinite;
+        }
+
+        @keyframes loading {
+
+            0% {
+                transform: rotate(-360deg);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="loader"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background: #121212;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    width: 500px;
+    height: 500px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 255, 255, 0.8);
+    position: relative;
+}
+
+.clock_hour {
+    font-size: 54px;
+    font-weight: 600;
+    position: absolute;
+    width: 60px;
+    text-align: center;
+}
+
+.clock_hour_12 {
+    top: 5px;
+    left: 220px;
+}
+
+.clock_hour_6 {
+    bottom: 5px;
+    left: 220px;
+}
+
+.clock_hour_3 {
+    top: 220px;
+    right: 20px;
+}
+
+.clock_hour_9 {
+    top: 220px;
+    left: 20px;
+}
+
+.clock_hour_1 {
+    top: 30px;
+    right: 120px;
+}
+
+.clock_hour_11 {
+    top: 30px;
+    left: 120px;
+}
+
+.clock_hour_5 {
+    bottom: 30px;
+    right: 120px;
+}
+
+.clock_hour_7 {
+    bottom: 30px;
+    left: 120px;
+}
+
+.clock_hour_2 {
+    top: 110px;
+    right: 50px;
+}
+
+.clock_hour_10 {
+    top: 110px;
+    left: 50px;
+}
+
+.clock_hour_4 {
+    bottom: 110px;
+    right: 50px;
+}
+
+.clock_hour_8 {
+    bottom: 110px;
+    left: 50px;
+}
+
+
+
+.hour-hand,
+.minute-hand,
+.seconds-hand {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hour-hand span {
+    width: 20px;
+    height: 120px;
+    background: #000;
+    display: block;
+    position: absolute;
+    top: -120px;
+    left: 5px;
+    border-radius: 50% 50% 0 0;
+}
+
+
+.minute-hand span {
+    width: 15px;
+    height: 160px;
+    background: #000;
+    display: block;
+    position: absolute;
+    top: -160px;
+    left: 7px;
+    border-radius: 40% 40% 0 0;
+}
+
+.seconds-hand span {
+    width: 10px;
+    height: 190px;
+    background: red;
+    display: block;
+    position: absolute;
+    top: -190px;
+    left: 10px;
+    border-radius: 30% 30% 0 0;
+}
+
+.circle-clock {
+    width: 40px;
+    height: 40px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

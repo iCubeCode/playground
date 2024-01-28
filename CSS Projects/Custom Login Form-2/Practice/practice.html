@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            background: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: #000;
+            width: 350px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            rotate: 5deg;
+            z-index: 2;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 20px;
+            color: #fff;
+            font-size: 28px;
+        }
+
+        .card-content {
+            width: 80%;
+            margin: auto;
+        }
+
+        .card-field {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card-field span {
+            color: #fff;
+            scale: 1.3;
+            cursor: pointer;
+        }
+
+        .card-field input {
+            width: 100%;
+            height: 30px;
+            background: transparent;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid #fff;
+            color: #fff;
+            padding-left: 5px;
+            font-size: 16px;
+        }
+
+        .card-field input:focus {
+            border-bottom: 2px solid green;
+        }
+
+        .card-actions {
+            padding: 30px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .card-actions button {
+            width: 100px;
+            height: 30px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background: crimson;
+            color: #fff;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        .card-actions button:hover {
+            scale: 1.1;
+        }
+
+        .card-actions button:active {
+            scale: 0.9;
+        }
+
+        .slip {
+            width: 200px;
+            height: 20px;
+            background: #fff;
+            position: absolute;
+            bottom: 20px;
+            left: -50px;
+            rotate: 35deg;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="card-header">
+            <span>Login</span>
+        </div>
+        <div class="card-content">
+            <div class="card-field">
+                <span class="material-icons">
+                    person
+                </span>
+                <input type="text" placeholder="Enter Username">
+            </div>
+
+            <div class="card-field">
+                <span class="material-icons">
+                    lock
+                </span>
+                <input type="password" placeholder="Enter Password">
+            </div>
+        </div>
+        <div class="card-actions">
+            <button>Login</button>
+        </div>
+
+        <div class="slip"></div>
+    </div>
+
+</body>
+
+</html>

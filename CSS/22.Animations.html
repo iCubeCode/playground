@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations - Part 1</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            background: teal;
+            border-radius: 50%;
+            animation: animation1 5s infinite;
+        }
+
+        @keyframes animation1 {
+
+            /* 1s */
+            0% {
+                background: red;
+                transform: scale(0.5);
+            }
+
+            /* 2.5s */
+            50% {
+                background: green;
+                transform: scale(1.5);
+            }
+
+            /* 5s */
+            100% {
+                background: crimson;
+                transform: scale(0.5);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="circle"></div>
+    </div>
+</body>
+
+</html>

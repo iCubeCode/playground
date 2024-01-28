@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Position</title>
+    <style>
+        .container {
+            border: 2px solid black;
+            width: 600px;
+            height: 200vh;
+            padding: 20px;
+            position: relative;
+        }
+
+        .card,
+        .card-1 {
+            width: 100px;
+            height: 100px;
+            background: teal;
+            color: #fff;
+            text-align: center;
+        }
+
+        .card {
+            position: absolute;
+            top: 20%;
+            right: 20%;
+        }
+
+        .card-1 {
+            position: fixed;
+            top: 20%;
+            right: 20%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <h3>Absolute</h3>
+        </div>
+        <div class="card-1">
+            <h3>Fixed</h3>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Dark and Light Mode</title>
+</head>
+
+<body>
+
+    <div class="--container --container--light" id="container">
+
+        <div class="container--header">
+            <div class="container--header-title">
+                <span>Flyine</span>
+                <div class="container--header-navigations">
+                    <ul>
+                        <li>Home</li>
+                        <li>Places</li>
+                        <li>About Us</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container--header-mode">
+                <i class="fa fa-sun-o" aria-hidden="true"></i>
+                <div class="container--header-mode--toggle" onclick="darkAndLightMode()">
+                    <span class="container--header-mode--toggle-cirlce toggle--light" id="toggle"></span>
+                </div>
+                <i class="fa fa-moon-o" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="container--content">
+            <div class="container--content-span1">
+                <div class="container--content-info--title">
+                    <span>The good life is a process, not a state of being. It is a direction not a destination</span>
+                </div>
+                <div class="container--content-info--btn">
+                    <button>Shop Now
+                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="container--content-info">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt nam necessitatibus dolorem
+                        quibusdam illo aliquam delectus reprehenderit laboriosam tenetur quo similique, culpa quam
+                        cupiditate aut asperiores autem iure unde in nemo, accusantium voluptate. Adipisci, facere.
+                    </p>
+                </div>
+            </div>
+            <div class="container--content-span2">
+                <div class="container--content-image">
+                    <img
+                        src="https://static.vecteezy.com/system/resources/previews/022/610/084/original/3d-airplane-icon-in-flight-air-transport-travel-png.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./index.js"></script>
+
+</body>
+
+</html>

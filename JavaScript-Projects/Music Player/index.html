@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./index.css">
+    <title>Music Player</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="player">
+            <div class="player--image--container">
+                <img src="./onelove.jpg" alt="song" id="image">
+            </div>
+            <div class="palyer--content">
+                <div class="player--name">
+                    <marquee>One Love - Shubh</marquee>
+                </div>
+                <div class="player--controls">
+                    <div class="player--control"><i class="fa fa-step-backward"></i></div>
+                    <div class="player--control" id="play" onclick="PlaySong()"><i class="fa fa-play"></i></div>
+                    <div class="player--control" id="pause" style="display: none;" onclick="PauseSong()"><i
+                            class="fa fa-pause"></i></div>
+                    <div class="player--control"><i class="fa fa-step-forward"></i></div>
+                </div>
+                <div class="player--progress" id="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="song" ontimeupdate="TrackTime()">
+        <source src="./Shubh_One_Love.mp3">
+    </audio>
+
+
+    <script src="./index.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .image-container img {
+            width: 350px;
+        }
+
+        .login-form {
+            width: 300px;
+            background: #fff;
+            border-radius: 5px;
+            margin-right: -150px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .login-form-header {
+            padding: 20px 10px;
+        }
+
+        .login-form-header span {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .login-form-content {
+            padding: 0 20px;
+        }
+
+        .login-form-field {
+            height: 60px;
+        }
+
+        .login-form-field label {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .login-form-field input {
+            margin-bottom: 10px;
+            width: 90%;
+            height: 25px;
+            padding-left: 10px;
+        }
+
+        .login-form-action {
+            padding: 20px;
+        }
+
+        .login-form-action button {
+            width: 70px;
+            height: 30px;
+            background: crimson;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-form-action button:hover {
+            scale: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="image-container">
+            <img src="https://i.pinimg.com/originals/d1/54/66/d154660a6ae3104de2b0a314667a5ab6.png" alt="login">
+        </div>
+        <div class="login-form">
+            <div class="login-form-header">
+                <span>Login</span>
+            </div>
+            <div class="login-form-content">
+                <div class="login-form-field">
+                    <label>Username</label>
+                    <input type="text" name="username" id="username" placeholder="Enter Username">
+                </div>
+                <div class="login-form-field">
+                    <label>Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter Password">
+                </div>
+                <div class="login-form-terms">
+                    <input type="checkbox" name="username" id="username">
+                    <label>Terms and Conditions</label>
+                </div>
+            </div>
+            <div class="login-form-action">
+                <button>Login</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

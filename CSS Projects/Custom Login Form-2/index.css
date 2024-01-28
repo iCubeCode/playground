@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #000;
+}
+
+.login-card {
+    width: 350px;
+    background: #000;
+    border-radius: 5px;
+    box-shadow: 0 0 20px white;
+    transform: rotate(5deg);
+    overflow: hidden;
+}
+
+.login-card-header {
+    padding: 20px;
+    color: white;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.login-card-content {
+    width: 80%;
+    margin: auto;
+}
+
+.login-card-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.login-card-field span {
+    color: white;
+    scale: 1.5;
+}
+
+.login-card-field input {
+    width: 100%;
+    height: 30px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid white;
+    color: white;
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+.login-card-field input:focus {
+    border-bottom: 2px solid green;
+}
+
+.login-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 30px;
+}
+
+.login-card-actions button {
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    background: crimson;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.login-card-actions button:hover {
+    scale: 1.1;
+}
+
+.login-card-actions button:active {
+    scale: 0.9;
+}
+
+
+.bottom-line {
+    width: 200px;
+    height: 20px;
+    background: white;
+    transform: rotate(30deg);
+    margin-left: -35px;
+}

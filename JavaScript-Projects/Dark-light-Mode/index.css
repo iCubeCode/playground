@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.--container--light {
+
+    --bg-color: #fffdde;
+    --bg-header-color: #121212;
+    --header-color: #fff;
+    --text-color: #000;
+    --btn-bg-color: #121212;
+    --btn-color: #fffdde;
+}
+
+.--container--dark {
+
+    --bg-color: #121212;
+    --bg-header-color: #fffdde;
+    --header--color: #000;
+    --text-color: #fff;
+    --btn-bg-color: #fffdde;
+    --btn-color: #121212;
+}
+
+
+.--container {
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    background-color: var(--bg-color);
+    transition: 0.8s all;
+}
+
+.container--header {
+    background-color: var(--bg-header-color);
+    color: var(--header-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.container--header-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.container--header-title span {
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+
+.container--header-navigations ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 400px;
+}
+
+.container--header-navigations ul li {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.container--content {
+    display: flex;
+    width: 100%;
+}
+
+
+.container--content-span1,
+.container--content-span2 {
+    width: 50%;
+}
+
+.container--content-span1 {
+    padding-top: 80px;
+    padding-left: 60px;
+}
+
+.container--content-info--title {
+    width: 550px;
+}
+
+.container--content-info--title span {
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.container--content-info--btn {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.container--content-info--btn button {
+    height: 40px;
+    padding: 10px 60px;
+    background: var(--btn-bg-color);
+    color: var(--btn-color);
+    font-size: 16px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+
+.container--content-info p {
+    column-count: 2;
+    column-width: 10px;
+    column-rule: 2px solid var(--bg-header-color);
+    color: var(--text-color);
+}
+
+.container--content-span2 {
+    padding-left: 100px;
+}
+
+.container--content-image {
+    width: 400px;
+    height: 400px;
+    margin-top: 60px;
+    background-image: url('https://wallpapers.com/images/featured/sky-mvehfqz6w2ges2dj.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container--content-image img {
+    width: 300px;
+}
+
+.container--header-mode {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.container--header-mode i {
+    color: var(--header-color);
+}
+
+.container--header-mode--toggle {
+    background: #c7c7c7;
+    width: 60px;
+    height: 30px;
+    border-radius: 50px;
+    position: relative;
+}
+
+.container--header-mode--toggle-cirlce {
+    background: #fff;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    position: absolute;
+    top: 1.2px;
+    cursor: pointer;
+    transition: 0.4s all;
+}
+
+.toggle--light {
+    left: 2px;
+}
+
+.toggle--dark {
+    left: 29px;
+}

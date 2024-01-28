@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container button {
+            width: 100px;
+            height: 40px;
+            font-size: 18px;
+            background: crimson;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .6s;
+        }
+
+        .container button:hover {
+
+            transform: scale(1.5);
+            /* 
+            0 - 1 - scale down
+            default - 1
+            after 1 - scale up
+            */
+
+            /* transform: rotate(-45deg); */
+            /* transform: translate(20px, 20px); */
+
+            /* transform: skewY(30deg); */
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button>Click</button>
+    </div>
+</body>
+
+</html>

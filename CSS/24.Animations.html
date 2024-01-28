@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Loader</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            width: 400px;
+            border: 1px solid #ababab;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 0 10px;
+        }
+
+        .card-content {
+            padding: 0 10px;
+        }
+
+        .loader {
+            width: 300px;
+            height: 2px;
+            background: teal;
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            animation: leftandright 2s infinite;
+        }
+
+        @keyframes leftandright {
+
+            0% {
+                left: -300px;
+            }
+
+            100% {
+                left: 400px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h2>This is the Title</h2>
+        </div>
+        <div class="card-content">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde dolor rerum tenetur ipsam debitis,
+                sapiente architecto veritatis aut inventore pariatur mollitia ullam iure nesciunt aliquid, dolorum
+                perferendis eum neque quia?</p>
+        </div>
+
+        <div class="loader"></div>
+    </div>
+</body>
+
+</html>

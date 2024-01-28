@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+}
+
+header {
+    border-bottom: 1px solid gray;
+    padding: 10px;
+}
+
+nav {
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+
+nav span {
+    margin-left: 10px;
+}
+
+nav span:first-child {
+    border-bottom: 2px solid black;
+}
+
+.image-container {
+    float: right;
+    margin: 15px;
+}
+
+.content {
+    padding: 20px;
+}
+
+.content p {
+    margin-bottom: 20px;
+}
