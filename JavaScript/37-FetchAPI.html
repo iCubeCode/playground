@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background: #121212;
+            height: 100vh;
+            overflow: auto;
+            color: #d2d2d2;
+            padding: 50px;
+        }
+
+        .card {
+            width: 300px;
+            margin: 50px auto;
+            box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card ul li {
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 style="text-align: center;">Fetch API</h1>
+        <div class="card">
+            <ul id="list">
+            </ul>
+        </div>
+    </div>
+
+
+    <script>
+
+        // https://jsonplaceholder.typicode.com/users
+
+        let list = document.getElementById('list')
+
+
+
+        const handleRequest = async () => {
+
+            let response = await fetch('https://jsonplaceholder.typicode.com/users')
+
+            let result = await response.json()
+
+            result.forEach((value) => {
+
+                let listItem = document.createElement('li')
+
+                listItem.innerHTML = value.name
+
+                list.append(listItem)
+
+            })
+
+        }
+
+        handleRequest()
+
+
+
+
+
+    </script>
+</body>
+
+</html>

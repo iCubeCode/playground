@@ -1,22 +1,22 @@
 
 
-const song = document.getElementById('song')
 
-const play = document.getElementById('play')
-const pause = document.getElementById('pause')
+let song = document.getElementById('song')
 
-const image = document.getElementById('image')
+let play = document.getElementById('play')
 
-const progress = document.getElementById('progress')
+let pause = document.getElementById('pause')
+
+let progress = document.getElementById('progress')
 
 
 function PlaySong() {
 
-    image.classList.add('image--animation')
+
     play.style.display = 'none'
     pause.style.display = 'flex'
 
-    song.volume = 0.1
+    song.volumne = 0.05
     song.play()
 
 }
@@ -24,20 +24,21 @@ function PlaySong() {
 
 function PauseSong() {
 
-    image.classList.remove('image--animation')
-    pause.style.display = 'none'
     play.style.display = 'flex'
+    pause.style.display = 'none'
 
-    song.pause()
     song.currentTime = 0
+    song.pause()
 
 }
 
 
-function TrackTime() {
+
+song.addEventListener('timeupdate', () => {
 
 
-    progress.style.width = ((song.currentTime / song.duration) * 100) + "%"
+    let percentage = Math.floor((song.currentTime / song.duration) * 100)
 
+    progress.style.width = percentage + "%"
 
-}
+})

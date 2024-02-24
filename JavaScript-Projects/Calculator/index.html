@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="calculator">
+            <div class="display-board">
+                <div class="display-input--previous" id="previous--input">-</div>
+                <div class="display-input" id="input">0</div>
+            </div>
+            <div class="numbers--span">
+                <span id="number7" onclick="getTileId('number7')">7</span>
+                <span id="number8" onclick="getTileId('number8')">8</span>
+                <span id="number9" onclick="getTileId('number9')">9</span>
+                <span id="multiply" onclick="getTileId('multiply')">*</span>
+            </div>
+            <div class="numbers--span">
+                <span id="number4" onclick="getTileId('number4')">4</span>
+                <span id="number5" onclick="getTileId('number5')">5</span>
+                <span id="number6" onclick="getTileId('number6')">6</span>
+                <span id="subtract" onclick="getTileId('subtract')">-</span>
+            </div>
+            <div class="numbers--span">
+                <span id="number1" onclick="getTileId('number1')">1</span>
+                <span id="number2" onclick="getTileId('number2')">2</span>
+                <span id="number3" onclick="getTileId('number3')">3</span>
+                <span id="addition" onclick="getTileId('addition')">+</span>
+            </div>
+            <div class="numbers--span">
+                <span id="point" onclick="getTileId('point')">.</span>
+                <span id="number0" onclick="getTileId('number0')">0</span>
+                <span id="divide" onclick="getTileId('divide')">/</span>
+                <span id="equals" onclick="Calculate()">=</span>
+            </div>
+            <div class="clear--calculator" onclick="ClearCalculator()">
+                Clear
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./index.js"></script>
+</body>
+
+
+</html>
