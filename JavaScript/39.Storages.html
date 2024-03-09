@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            padding: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <h1 id="message">Please Login</h1>
+        <input type="text" placeholder="enter username" id="username">
+        <br>
+        <br>
+        <input type="password" placeholder="enter password" id="password">
+        <br>
+        <br>
+        <button onclick="Login()">Login</button>
+    </div>
+
+
+
+    <script>
+
+        let username = document.getElementById('username')
+        let password = document.getElementById('password')
+        let message = document.getElementById('message')
+
+        function Login() {
+            localStorage.setItem('user', username.value)
+            CheckLogin()
+        }
+        CheckLogin()
+        function CheckLogin() {
+
+            if (localStorage.getItem('user') !== null) {
+                message.innerHTML = 'User Logged In'
+            }
+            else {
+                message.innerHTML = 'Please Login'
+            }
+
+        }
+
+    </script>
+
+
+    <script>
+
+        // Local Storage
+
+        // creating local storage
+
+        // localStorage.setItem('name', 'ilyas')
+        // localStorage.setItem('number', 2222)
+
+        // remove local storage
+
+        // localStorage.removeItem('name')
+
+        // get the value from local storage
+
+        // let names = localStorage.getItem('name')
+
+        // console.log(names)
+
+
+
+        // Session Storage
+
+        // creation of session storage
+        // sessionStorage.setItem('name', 'bruce')
+
+
+        // removal of session storage
+        // sessionStorage.removeItem('name')
+
+
+        // getting the session storage value
+
+        // let names = sessionStorage.getItem('name')
+        // console.log(names)
+
+
+        // cookie
+
+        // document.cookie = 'name=ilyas'
+
+        // document.cookie = 'name1=bruce;max-age=1000'
+
+        // access the cookie
+
+        // console.log(document.cookie)
+
+
+    </script>
+
+</body>
+
+</html>
