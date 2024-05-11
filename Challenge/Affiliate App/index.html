@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body id="toggle-bg" class="light_mode">
+
+    <div class="header">
+        <div class="header__logo">
+            <span>Affiliate zone</span>
+        </div>
+        <div class="header__profile">
+            <span>Welcome, User</span>
+            <div class="profile_section">
+                <img src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=1552"
+                    alt="User Images will be visible here">
+
+                <div class="dropdown_list">
+                    <ul>
+                        <li>Profile</li>
+                        <li>About Us</li>
+                        <li onclick="enableLoginForm()">Login</li>
+                    </ul>
+                    <div class="toggle_container">
+                        <div class="toggle light-btn" onclick="toggleMode()" id="toggle-btn">
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <span class="triangle"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="nav_container">
+            <div class="nav_list">
+                <ul>
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-shopping-basket"></i>
+                        <span>My Orders</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-user"></i>
+                        <span>Invite</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-money"></i>
+                        <span>Earnings</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav_settings">
+                <i class="fa fa-cog"></i>
+                <span>
+                    Settings
+                </span>
+            </div>
+        </div>
+
+        <div class="content_container">
+            <div class="content_refferals">
+                <div class="refferals_span span_1">
+                    <div class="refferals_span_earn">
+                        <label>Refferals</label>
+                        <span>4</span>
+                    </div>
+                    <div class="refferals_span_image">
+                        <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="refferals_span span_2">
+                    <div class="refferals_span_earn">
+                        <label>Earnings</label>
+                        <span>$12.25</span>
+                    </div>
+                    <div class="refferals_span_image">
+                        <i class="fa fa-money" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content_affiliate">
+                <div class="card">
+                    <div class="card_header">
+                        <img src="https://purepng.com/public/uploads/large/amazon-logo-s3f.png" alt="amazon">
+                    </div>
+                    <div class="card_details">
+                        <p>Earn $0.5 | Login to Amazon</p>
+                    </div>
+                    <div class="card_actions">
+                        <!-- blue color button -->
+                        <button>Affiliate</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_header">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDWmlpWI3ooea3EpWSTHXE-u7q55AcFbFzkKiILi6dNw&s"
+                            alt="amazon">
+                    </div>
+                    <div class="card_details">
+                        <p>Earn $4 | Purchase a Product</p>
+                    </div>
+                    <div class="card_actions">
+                        <!-- blue color button -->
+                        <button>Affiliate</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_header">
+                        <img src="https://1000logos.net/wp-content/uploads/2022/08/Myntra-Logo.png" alt="amazon">
+                    </div>
+                    <div class="card_details">
+                        <p>Earn $2 | Share 4 the Products</p>
+                    </div>
+                    <div class="card_actions">
+                        <!-- blue color button -->
+                        <button>Affiliate</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_header">
+                        <img src="https://iconape.com/wp-content/png_logo_vector/ajio-logo.png" alt="amazon">
+                    </div>
+                    <div class="card_details">
+                        <p>Earn $4 | Purchase a Product</p>
+                    </div>
+                    <div class="card_actions">
+                        <!-- blue color button -->
+                        <button>Affiliate</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_header">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Paytm_logo.png" alt="amazon">
+                    </div>
+                    <div class="card_details">
+                        <p>Earn $5 | Pay Bills</p>
+                    </div>
+                    <div class="card_actions">
+                        <!-- blue color button -->
+                        <button>Affiliate</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_header">
+                        <img src="https://logowik.com/content/uploads/images/google-logo-2020.jpg" alt="amazon">
+                    </div>
+                    <div class="card_details">
+                        <p>Earn $0.2 | Watch Ads</p>
+                    </div>
+                    <div class="card_actions">
+                        <!-- blue color button -->
+                        <button>Affiliate</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="login_container" id="login-form">
+        <div class="login_card">
+            <div class="login_img">
+                <img src="https://img.freepik.com/free-photo/3d-render-secure-login-password-illustration_107791-16640.jpg?t=st=1713361642~exp=1713365242~hmac=50577558da5cdb9a6c555ed4a2fecc8c6033373e6c4978e94d930e83f5beb7bb&w=740"
+                    alt="loginimage">
+            </div>
+            <div class="login_content">
+                <div class="login_form">
+                    <div class="login_form_header">
+                        <span>Affiliate Zone</span>
+                    </div>
+                    <div class="login_form_content">
+                        <div class="login_form_field">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" placeholder="e.g. Jhon">
+                        </div>
+                        <div class="login_form_field">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="Enter the Password">
+                        </div>
+                        <div class="login_form_field">
+                            <p>forgot password</p>
+                            <button>Login</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="login_create_account">
+                    <p>Don't have an accound? <span>Create new Account</span></p>
+                </div>
+            </div>
+            <div class="close_form">
+                <i class="fa fa-close" onclick="closeLoginForm()"></i>
+            </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+
+</body>
+
+</html>

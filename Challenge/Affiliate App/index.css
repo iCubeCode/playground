@@ -1,0 +1,400 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.dark_mode {
+    --background--color: #121212;
+    --text--color: #f9f9f9;
+}
+
+.light_mode {
+    --background--color: #fff;
+    --text--color: #252525;
+}
+
+.header {
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--background--color);
+    border-bottom: 1px solid #c7c7c7;
+    color: var(--text--color);
+}
+
+.header__logo span {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.header__profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header__profile span {
+    font-weight: 500;
+}
+
+.profile_section {
+    position: relative;
+}
+
+.profile_section img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.dropdown_list {
+    position: relative;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 150px;
+    background: #ffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 12px;
+    display: none;
+}
+
+.profile_section:hover .dropdown_list {
+    display: block;
+}
+
+.dropdown_list ul {
+    list-style: none;
+}
+
+.dropdown_list ul li {
+    padding: 10px 0;
+    cursor: pointer;
+    color: #212121;
+}
+
+.dropdown_list ul li:hover {
+    color: #0e91e3;
+}
+
+.triangle {
+    position: absolute;
+    top: -15px;
+    right: 10px;
+    display: block;
+    clip-path: polygon(50% 34%, 11% 100%, 89% 100%);
+    background: #fff;
+    width: 15px;
+    height: 15px;
+}
+
+.toggle_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 0 0;
+}
+
+.toggle {
+    height: 25px;
+    width: 60px;
+    border-radius: 50px;
+    background: #c7c7c7;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle span {
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #b2b2b2;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    transition: 0.4s all;
+}
+
+
+.dark-btn span {
+    left: 33px;
+}
+
+.light-btn span {
+    left: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.nav_container {
+    width: 15%;
+    height: 86vh;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #c7c7c7;
+    background: var(--background--color);
+    color: var(--text--color);
+}
+
+.nav_list {
+    flex: 1;
+}
+
+.nav_list ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.nav_list ul li {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav_list ul li span {
+    flex: 1;
+}
+
+.nav_list ul li i {
+    font-size: 18px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_list ul li:hover {
+    font-size: 15px;
+}
+
+.nav_settings {
+    padding: 10px 20px;
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.content_container {
+    height: 86vh;
+    overflow: auto;
+    padding: 24px;
+    width: 100%;
+    background: var(--background--color);
+}
+
+.content_refferals {
+    display: flex;
+    gap: 24px;
+}
+
+.refferals_span {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.4s all;
+    cursor: pointer;
+}
+
+.span_1 {
+    background: #edab1b;
+}
+
+.span_2 {
+    background: #06be97;
+}
+
+.refferals_span_earn {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.refferals_span_earn span {
+    font-size: 28px;
+    color: #252525;
+}
+
+.refferals_span_image i {
+    font-size: 80px;
+}
+
+.content_affiliate {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 24px;
+    background: #fff;
+}
+
+.card_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.card_header img {
+    width: 150px;
+}
+
+.card_details {
+    padding: 16px 0;
+    text-align: center;
+}
+
+.card_actions button {
+    width: 100%;
+    height: 35px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: #0e91e3;
+    color: #fff;
+    cursor: pointer;
+}
+
+.card_actions button:active {
+    scale: 0.98;
+}
+
+
+
+.login_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.enableLogin {
+    display: flex;
+}
+
+.login_card {
+    position: relative;
+    width: 700px;
+    height: 80vh;
+    background: var(--background--color);
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+}
+
+.login_img img {
+    width: 250px;
+}
+
+.login_content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.login_form_header {
+    padding: 15px 0;
+}
+
+.login_form_header span {
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: var(--text--color);
+}
+
+.login_form_content {
+    padding: 15px 0;
+}
+
+.login_form_field {
+    margin-bottom: 16px;
+}
+
+.login_form_field label {
+    font-size: 14px;
+    color: var(--text--color);
+    display: block;
+}
+
+.login_form_field input {
+    width: 80%;
+    height: 35px;
+    margin-top: 5px;
+    padding-left: 16px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.login_form_field p {
+    font-size: 12px;
+    color: #0e91e3;
+    margin-bottom: 8px;
+}
+
+.login_form_field button {
+    width: 80%;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-align: center;
+    color: #fff;
+    background: #0e91e3;
+    cursor: pointer;
+}
+
+.login_create_account {
+    text-align: center;
+    width: 80%;
+    font-size: 14px;
+}
+
+.login_create_account p {
+    color: var(--text--color);
+}
+
+.login_create_account p span {
+    color: #0e91e3;
+}
+
+.close_form {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
