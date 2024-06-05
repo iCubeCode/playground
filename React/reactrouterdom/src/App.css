@@ -1,0 +1,25 @@
+.app {
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav li {
+  padding: 10px;
+}
+
+.nav li a {
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.nav li a.active {
+  background: teal;
+  color: #fff;
+}

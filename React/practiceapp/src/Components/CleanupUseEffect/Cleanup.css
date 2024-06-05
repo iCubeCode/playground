@@ -1,0 +1,13 @@
+.nav_bar {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.nav_bar a {
+    padding: 10px;
+    text-decoration: none;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
