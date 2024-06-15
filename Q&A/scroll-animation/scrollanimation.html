@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .section {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .section p {
+            width: 400px;
+            padding: 10px;
+        }
+
+        .section img {
+            width: 400px;
+        }
+
+        .img2 {
+            position: absolute;
+            left: -600px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="section" id="section1">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique exercitationem, vero ut hic molestiae
+            unde minus dolor delectus est aut assumenda quos vitae dolores earum eveniet natus veritatis ullam.
+            Corporis, modi ad. Nobis quasi delectus totam cupiditate odio dolorum laborum.</p>
+        <img src="./car1.svg" alt="">
+    </div>
+    <div class="section" id="section2" style="opacity: 0;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique exercitationem, vero ut hic molestiae
+            unde minus dolor delectus est aut assumenda quos vitae dolores earum eveniet natus veritatis ullam.
+            Corporis, modi ad. Nobis quasi delectus totam cupiditate odio dolorum laborum.</p>
+        <img src="./img2.svg" alt="">
+    </div>
+    <div class="section" id="section3">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique exercitationem, vero ut hic molestiae
+            unde minus dolor delectus est aut assumenda quos vitae dolores earum eveniet natus veritatis ullam.
+            Corporis, modi ad. Nobis quasi delectus totam cupiditate odio dolorum laborum.</p>
+        <img src="./img2.svg" alt="">
+    </div>
+    <div class="section" id="section4">
+        <img src="./img2.svg" id="img2" class="img2" alt="">
+    </div>
+    <div class="section" id="section5">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique exercitationem, vero ut hic molestiae
+            unde minus dolor delectus est aut assumenda quos vitae dolores earum eveniet natus veritatis ullam.
+            Corporis, modi ad. Nobis quasi delectus totam cupiditate odio dolorum laborum.</p>
+        <img src="./img2.svg" alt="">
+    </div>
+
+
+    <script src="./scrollanimation.js"></script>
+</body>
+
+</html>

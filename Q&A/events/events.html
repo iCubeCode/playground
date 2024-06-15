@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .nav {
+            position: relative;
+        }
+
+        .nav p {
+            border: 1px solid #000;
+            width: 100px;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background: #c8c8c8;
+            width: 100px;
+            position: absolute;
+            bottom: -116px;
+            left: 0;
+            display: none;
+        }
+
+        .nav ul li {
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Events</h1>
+
+
+    <div class="nav">
+        <p id="dropdown">Options</p>
+        <ul id="list">
+            <li>Home</li>
+            <li>About</li>
+            <li>Profile</li>
+        </ul>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut vero reiciendis exercitationem optio. Non sapiente
+        quae vitae est perferendis eos quis facere. Dignissimos suscipit deleniti error ab officiis illo quos iusto quas
+        ullam ea aspernatur excepturi repellat possimus voluptatem molestias facere corrupti sunt dolore explicabo, enim
+        autem esse pariatur quasi. Earum dolor similique sequi ut maxime quasi fugit consequatur eveniet optio.
+        Consectetur aliquid ab cumque dolorum eius quae possimus quisquam officiis ad, aut reiciendis perspiciatis
+        nostrum quo aspernatur corrupti accusamus voluptatem laudantium? Veniam odio pariatur dolorum natus expedita, a
+        doloremque earum harum voluptates, magni atque rem laborum quo maxime et!</p>
+
+    <div style="text-align: center;">
+        <label>Username</label>
+        <br>
+        <input type="text" id="txt" placeholder="Enter username" />
+        <br>
+        <span id="txt_helper" style="color: red;"></span>
+    </div>
+
+    <button id="btn">Click Here</button>
+
+
+    <script src="./events.js"></script>
+
+</body>
+
+</html>

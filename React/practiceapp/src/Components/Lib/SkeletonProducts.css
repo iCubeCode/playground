@@ -1,0 +1,26 @@
+.sp_product {
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #c8c8c8;
+    margin-bottom: 20px;
+}
+
+.sp_product_img img {
+    width: 100px;
+}
+
+.sp_container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skeleton_container {
+    border: 1px solid #c8c8c8;
+    padding: 10px;
+}
+
+.skeleton_container_img {
+    padding: 30px;
+}

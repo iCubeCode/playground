@@ -21,6 +21,11 @@ import Main from './Components/ReduxComponents/Main'
 import Header from './Components/ReduxComponents/Header'
 
 import { CartContextProvider } from './context/CartContext'
+import Toastify from './Components/Lib/Toastify';
+import SkeletonLoader from './Components/Lib/SkeletonLoader';
+import SkeletonProducts from './Components/Lib/SkeletonProducts';
+import ReactTilt from './Components/Lib/ReactTilt';
+import LottieIcons from './Components/Lib/LottieIcons';
 
 function App() {
 
@@ -58,8 +63,17 @@ function App() {
         <Main />
       </CartContextProvider> */}
 
-      <Header />
-      <Main />
+      {/* <Header />
+      <Main /> */}
+
+      {/* <Toastify /> */}
+
+      {/* <SkeletonLoader /> */}
+      {/* <SkeletonProducts /> */}
+
+      {/* <ReactTilt /> */}
+
+      <LottieIcons />
 
     </div>
   );
