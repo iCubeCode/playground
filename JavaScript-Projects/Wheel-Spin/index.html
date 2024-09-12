@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheel Spin</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="wheel">
+            <div class="spinner" id="spin">
+                <div class="spin spinner_1">
+                    <span>100</span>
+                </div>
+                <div class="spin spinner_2">
+                    <span>250</span>
+                </div>
+                <div class="spin spinner_3">
+                    <span>750</span>
+                </div>
+                <div class="spin spinner_4">
+                    <span>1000</span>
+                </div>
+            </div>
+            <div class="arrow"></div>
+            <div class="spin_btn" id="btn" onclick="spinTheWheel()">
+                <span>Spin</span>
+            </div>
+        </div>
+
+        <div class="text" id="hide_text">
+            <span>You</span>
+            <span>WON</span>
+        </div>
+        <div class="win_amount" id="hide">
+            <span id="amount">000</span>
+        </div>
+    </div>
+
+
+    <script src="./index.js"></script>
+
+</body>
+
+</html>

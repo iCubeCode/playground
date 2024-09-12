@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.wheel {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    outline: 20px solid #234762;
+    border-radius: 50%;
+}
+
+.spinner {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: 2s all linear;
+    transform: rotate(315deg);
+}
+
+.spin {
+    width: 50%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spin span {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.spinner_1 {
+    background: #e27b20;
+}
+
+.spinner_1 span {
+    rotate: -45deg;
+}
+
+.spinner_2 {
+    background: #29e220;
+}
+
+.spinner_2 span {
+    rotate: 45deg;
+}
+
+.spinner_3 {
+    background: #e22049;
+}
+
+.spinner_3 span {
+    rotate: 220deg;
+}
+
+.spinner_4 {
+    background: #78d1eb;
+}
+
+.spinner_4 span {
+    rotate: -220deg;
+}
+
+.arrow {
+    width: 50px;
+    height: 50px;
+    background: #000;
+    clip-path: polygon(0 0, 51% 72%, 100% 0);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.spin_btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    outline: 10px solid #234762;
+    border-radius: 50%;
+    background: #fcf7f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.spin_btn:active {
+    scale: 0.95;
+}
+
+
+.text {
+    position: fixed;
+    top: 50%;
+    left: 10%;
+    transform: translate(-10%, -50%);
+    text-align: center;
+    font-size: 100px;
+    font-weight: 600;
+}
+
+.text span {
+    display: block;
+}
+
+
+.win_amount {
+    position: fixed;
+    top: 50%;
+    right: 10%;
+    transform: translate(-10%, -50%);
+    text-align: center;
+    font-size: 100px;
+    font-weight: 600;
+}
+
+#hide {
+    display: none;
+}
+
+#hide_text {
+    display: none;
+}
