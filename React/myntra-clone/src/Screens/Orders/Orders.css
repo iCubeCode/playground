@@ -1,0 +1,28 @@
+.orders_container {
+    max-width: 100%;
+    width: 50%;
+    margin: 20px auto;
+    padding: 0 24px;
+}
+
+.orders_header span {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222222;
+}
+
+.orders_content {
+    height: 80vh;
+    overflow: auto;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.orders_content span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #a1a1a1;
+    display: block;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}

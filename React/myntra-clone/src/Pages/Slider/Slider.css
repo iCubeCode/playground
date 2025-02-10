@@ -1,0 +1,43 @@
+.slider_container {
+    width: 100%;
+    overflow-x: hidden;
+    height: 60vh;
+}
+
+.slider_images {
+    display: flex;
+    height: 60vh;
+    width: 400%;
+    animation: slider 10s linear infinite;
+}
+
+.slider_images img {
+    height: 60vh;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+
+@keyframes slider {
+
+    0%,
+    20%,
+    100% {
+        margin-left: 0;
+    }
+
+    25%,
+    45% {
+        margin-left: -100%;
+    }
+
+    50%,
+    70% {
+        margin-left: -200%;
+    }
+
+    75%,
+    90% {
+        margin-left: -300%;
+    }
+}

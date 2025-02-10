@@ -1,0 +1,115 @@
+.product_card {
+    width: 250px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.product_card_img {
+    width: 100%;
+    position: relative;
+}
+
+.product_card_img img {
+    width: 100%;
+}
+
+.product_card_ratings {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 5px;
+    font-size: 14px;
+}
+
+.product_card_ratings p {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.product_card_ratings p i {
+    width: 30px;
+    height: 30px;
+    background-image: url("https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png");
+    background-repeat: no-repeat;
+    background-position: -351px -64px;
+    scale: 0.4;
+}
+
+.product_empty_heart {
+    position: absolute;
+    width: 38px;
+    height: 33px;
+    top: 5px;
+    right: 5px;
+    background-image: url("https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png");
+    background-repeat: no-repeat;
+    background-position: -628px -169px;
+    cursor: pointer;
+    scale: 0.7;
+}
+
+.product_empty_heart:active,
+.product_fill_heart:active {
+    scale: 0.65;
+}
+
+.product_fill_heart {
+    position: absolute;
+    width: 38px;
+    height: 33px;
+    top: 5px;
+    right: 5px;
+    background-image: url("https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png");
+    background-repeat: no-repeat;
+    background-position: -665px -169px;
+    cursor: pointer;
+    scale: 0.7;
+}
+
+.product_card_details {
+    padding: 10px;
+}
+
+.product_card_brand {
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.product_name {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: #535766;
+}
+
+.product_prices {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.product_prices del {
+    color: #7E818C;
+    font-weight: 300;
+}
+
+.product_prices span {
+    color: #FF905A;
+}
+
+.product_card_btn {
+    padding: 10px;
+}
+
+.product_card_btn button {
+    width: 100%;
+    height: 30px;
+    background: transparent;
+    border: 1px solid #a7a7a7;
+    cursor: pointer;
+}
+
+.product_card_btn button:active {
+    scale: 0.95;
+}

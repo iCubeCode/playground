@@ -1,0 +1,39 @@
+/* # FF3F6C */
+
+
+.empty_cart {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    user-select: none;
+}
+
+.empty_cart img {
+    width: 10%;
+}
+
+.empty_cart span {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.empty_cart p {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #7E818C;
+}
+
+.empty_cart button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid #FF3F6C;
+    color: #FF3F6C;
+    font-weight: 600;
+    cursor: pointer;
+}
