@@ -1,14 +1,15 @@
 import React from 'react'
-import Slider from '../../Pages/Slider'
-import Categories from '../../Pages/Categories'
+import './Home.css'
+import Slider from '../../Pages/Slider';
+import Categories from '../../Pages/Categories';
 
 function Home() {
     return (
-        <React.Fragment>
+        <div>
             <Slider />
             <Categories />
-        </React.Fragment>
+        </div>
     )
 }
 
-export default Home
+export default Home;

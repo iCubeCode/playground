@@ -1,9 +1,9 @@
 import React from 'react'
-import "./EmptyCart.css"
+import "./EmptyData.css"
 import { MyntraData } from '../../data'
 import { useNavigate } from 'react-router-dom'
 
-function EmptyCart() {
+function EmptyData() {
 
     const navigate = useNavigate()
 
@@ -17,4 +17,4 @@ function EmptyCart() {
     )
 }
 
-export default EmptyCart
+export default EmptyData

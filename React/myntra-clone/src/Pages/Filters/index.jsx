@@ -3,21 +3,21 @@ import "./Filters.css"
 
 function Filters({
     search,
-    setSearch,
     price,
+    setSearch,
     setPrice
 }) {
 
-    const handleReset = () => {
-        setPrice('')
+    const handleClear = () => {
         setSearch('')
+        setPrice('')
     }
 
     return (
         <div className='filters'>
             <div className='filters_header'>
                 <span>Filters</span>
-                <i onClick={handleReset}></i>
+                <i onClick={handleClear}></i>
             </div>
             <div className='filters_search'>
                 <span>Product Name / Brand</span>
@@ -37,7 +37,7 @@ function Filters({
                         name='price'
                         value={'highlow'}
                         checked={price === 'highlow'}
-                        onChange={() => setPrice('highlow')}
+                        onChange={(e) => setPrice(e.target.value)}
                     />
                     <label htmlFor='highlow'>High to Low</label>
                 </div>
@@ -48,7 +48,7 @@ function Filters({
                         name='price'
                         value={'lowhigh'}
                         checked={price === 'lowhigh'}
-                        onChange={() => setPrice('lowhigh')}
+                        onChange={(e) => setPrice(e.target.value)}
                     />
                     <label htmlFor='lowhigh'>Low to High</label>
                 </div>
@@ -57,10 +57,4 @@ function Filters({
     )
 }
 
-export default Filters;
-
-
-// -> Search with Name
-// -> High to low - low to high
-// -> with price range with text box.
-// -> with rating with radio buttons
+export default Filters

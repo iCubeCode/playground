@@ -1,5 +1,7 @@
 import React from 'react'
 import "./HProductCard.css"
+import { useDispatch, useSelector } from 'react-redux'
+import { getCartData, getProducts, setCart, setProducts } from '../../Redux/Slices/productSlice'
 
 function HProductCard({
     image,
@@ -8,13 +10,55 @@ function HProductCard({
     price,
     actualPrice,
     discount,
-    type = 'cart',
     qty,
-    closeHandler,
-    data,
-    handleAddCart,
-    handleQty
+    type,
+    id,
+    data
 }) {
+
+    const cart = useSelector(getCartData)
+    const products = useSelector(getProducts)
+    const dispatch = useDispatch()
+
+    const handleRemove = () => {
+        if (type === 'cart') {
+            dispatch(setCart(cart.filter((item) => item.id !== id)))
+        }
+        else {
+            dispatch(setProducts(products.map((item) => item.id === id ? { ...item, "wishList": false } : item)))
+        }
+    }
+
+    const handleChangeQTY = (event) => {
+
+        let value = event.target.value
+
+        dispatch(setCart(cart.map((item) => {
+            return item.id === id ? { ...item, "qty": value } : item
+        })))
+
+    }
+
+    const handleAddToCart = () => {
+        let values = cart.filter(item => item.id === id)
+
+        if (values.length !== 0) {
+            // increase qty
+
+            let output = cart.map((item) => {
+
+                return item.id === id ? { ...item, "qty": item.qty + 1 } : item
+
+            })
+
+            dispatch(setCart(output))
+
+        }
+        else {
+            dispatch(setCart([...cart, data]))
+        }
+    }
+
     return (
         <div className='h_product_container'>
             <div className='h_product_image'>
@@ -28,7 +72,7 @@ function HProductCard({
                 <div className='h_product_qty'>
                     {
                         type === 'cart' && (
-                            <select value={qty} onChange={(e) => handleQty(data.id, e.target.value)}>
+                            <select value={qty} onChange={handleChangeQTY}>
                                 <option value={1}>Qty.1</option>
                                 <option value={2}>Qty.2</option>
                                 <option value={3}>Qty.3</option>
@@ -43,13 +87,13 @@ function HProductCard({
                         )
                     }
                     {
-                        type === 'orders' && (
-                            <span>Qty: {qty}</span>
+                        type === 'wishlist' && (
+                            <button onClick={handleAddToCart}>Add to Cart</button>
                         )
                     }
                     {
-                        type === 'wishlist' && (
-                            <button onClick={() => handleAddCart(data)}>Add to Cart</button>
+                        type === 'orders' && (
+                            <span>Qty: {qty}</span>
                         )
                     }
                 </div>
@@ -57,11 +101,7 @@ function HProductCard({
                     <p>Rs. {price} <del>Rs.{actualPrice}</del> <span>{`(${discount}%) OFF`}</span></p>
                 </div>
             </div>
-            {
-                type !== 'orders' && (
-                    <div className='h_product_close' onClick={() => closeHandler(data.id)}></div>
-                )
-            }
+            <div className='h_product_close' onClick={handleRemove}></div>
         </div>
     )
 }

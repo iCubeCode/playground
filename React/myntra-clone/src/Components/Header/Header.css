@@ -83,6 +83,18 @@
     padding-left: 36px;
 }
 
+.search_icon {
+    position: absolute;
+    top: 0;
+    left: -5px;
+    width: 50px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: -1508px 0;
+    scale: 0.4;
+    background-image: url("https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png");
+}
+
 .header_items {
     display: flex;
 }
@@ -127,17 +139,5 @@
     background-repeat: no-repeat;
     background-position: -685px -116px;
     scale: 0.6;
-    background-image: url("https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png");
-}
-
-.search_icon {
-    position: absolute;
-    top: 0;
-    left: -5px;
-    width: 50px;
-    height: 40px;
-    background-repeat: no-repeat;
-    background-position: -1508px 0;
-    scale: 0.4;
     background-image: url("https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png");
 }

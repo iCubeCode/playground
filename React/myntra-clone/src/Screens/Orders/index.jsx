@@ -1,16 +1,16 @@
 import React from 'react'
 import "./Orders.css"
-import { getOrdersData } from '../../Redux/Slices/ProductsSlice'
-import { useSelector } from 'react-redux'
-import EmptyCart from '../../Components/EmptyCart'
 import HProductCard from '../../Components/HProductCard'
+import { useSelector } from 'react-redux'
+import { getOrdersData } from '../../Redux/Slices/productSlice'
+import EmptyData from '../../Components/EmptyData'
 
 function Orders() {
 
     const orders = useSelector(getOrdersData)
 
     if (orders.length === 0) {
-        return <EmptyCart />
+        return <EmptyData />
     }
 
     return (
@@ -25,16 +25,16 @@ function Orders() {
                         return (
                             <HProductCard
                                 key={index}
-                                image={item?.imgURIs[0]}
-                                brand={item?.brand}
-                                name={item?.name}
-                                price={item?.price}
-                                actualPrice={item?.MRP}
-                                discount={item?.discount}
-                                type='orders'
-                                qty={item?.qty}
+                                image={item.imgURIs[0]}
+                                brand={item.brand}
+                                name={item.name}
+                                price={item.price}
+                                actualPrice={item.MRP}
+                                discount={item.discount}
+                                qty={item.qty}
+                                type={'cart'}
+                                id={item.id}
                                 data={item}
-                                closeHandler={() => { }}
                             />
                         )
                     })

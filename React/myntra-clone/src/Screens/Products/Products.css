@@ -15,3 +15,9 @@
     align-items: start;
     justify-content: center;
 }
+
+.breadcrumb {
+    font-size: 12px;
+    padding: 10px;
+    letter-spacing: 0.8px;
+}

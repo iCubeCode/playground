@@ -1,39 +1,50 @@
 import React, { useMemo, useReducer } from 'react'
 import "./Products.css"
-import BreadCrumb from '../../Components/BreadCrumb';
-import Filters from '../../Pages/Filters';
-import ProductCard from '../../Components/ProductCard';
-import { useSelector } from 'react-redux';
-import { getProductsData } from '../../Redux/Slices/ProductsSlice';
+import Filters from '../../Pages/Filters'
+import ProductCard from '../../Components/ProductCard'
+import { useSelector } from 'react-redux'
+import { getProducts } from '../../Redux/Slices/productSlice'
 
 
-const PRODUCTENUM = {
-    "PRICE": "price",
-    "SEARCH": "search"
+const Filter_Enum = {
+    "SEARCH": "search",
+    "PRICE": "price"
 }
 
-const initialStates = {
-    [PRODUCTENUM.PRICE]: '',
-    [PRODUCTENUM.SEARCH]: ''
+const initialState = {
+    [Filter_Enum.SEARCH]: '',
+    [Filter_Enum.PRICE]: ''
+}
+
+function reducer(state, action) {
+
+    switch (action.type) {
+        case Filter_Enum.SEARCH:
+            return { ...state, [Filter_Enum.SEARCH]: action.payload }
+        case Filter_Enum.PRICE:
+            return { ...state, [Filter_Enum.PRICE]: action.payload }
+        default:
+            return state
+    }
+
 }
 
 
 function Products() {
 
-    const [state, dispatcher] = useReducer(reducer, initialStates)
+    const [state, dispatcher] = useReducer(reducer, initialState)
 
-    const products = useSelector(getProductsData)
+    const products = useSelector(getProducts)
 
-    const filteredData = useMemo(() => {
+    const filteredProcducts = useMemo(() => {
 
-        if (state.search === '' && state.price === '') {
-            return products
-        }
-        else {
+        if (state.search !== '' || state.price !== '') {
+            // filters
 
             let output = [...products].filter((item) => {
-                let name = false;
-                let brand = false;
+
+                let name = false
+                let brand = false
 
                 name = item.name.toLowerCase().includes(state.search.toLowerCase())
                 brand = item.brand.toLowerCase().includes(state.search.toLowerCase())
@@ -41,45 +52,37 @@ function Products() {
                 return name || brand
             })
 
-            if (state.price !== '') {
-                if (state.price === 'highlow') {
-                    output.sort((a, b) => b.price - a.price)
-                }
-                else {
-                    output.sort((a, b) => a.price - b.price)
-                }
+            if (state.price === 'highlow') {
+                return output.sort((a, b) => b.price - a.price)
             }
-
-            return output
+            else {
+                return output.sort((a, b) => a.price - b.price)
+            }
+        }
+        else {
+            return products
         }
 
     }, [state, products])
 
     return (
         <div className='products'>
-            <BreadCrumb />
+            <div className='breadcrumb'>
+                <p>Home / Clothing / <b>Products</b></p>
+            </div>
             <div className='products_container'>
                 <Filters
                     search={state.search}
-                    setSearch={(value) => dispatcher({ 'type': PRODUCTENUM.SEARCH, "value": value })}
                     price={state.price}
-                    setPrice={(value) => dispatcher({ 'type': PRODUCTENUM.PRICE, "value": value })}
+                    setSearch={(value) => dispatcher({ type: Filter_Enum.SEARCH, payload: value })}
+                    setPrice={(value) => dispatcher({ type: Filter_Enum.PRICE, payload: value })}
                 />
                 <div className='products_content'>
                     {
-                        filteredData.map((item, index) => {
+                        filteredProcducts.map((item, index) => {
                             return (
                                 <ProductCard
                                     key={index}
-                                    image={item.imgURIs[0]}
-                                    brand={item.brand}
-                                    name={item.name}
-                                    price={item.price}
-                                    actualPrice={item.MRP}
-                                    discount={item.discount}
-                                    rating={item.rating}
-                                    reviews={item.reviews}
-                                    wishList={item.wishList}
                                     data={item}
                                 />
                             )
@@ -91,19 +94,4 @@ function Products() {
     )
 }
 
-export default Products;
-
-
-
-function reducer(state, action) {
-
-    switch (action.type) {
-        case PRODUCTENUM.PRICE:
-            return { ...state, [PRODUCTENUM.PRICE]: action.value }
-        case PRODUCTENUM.SEARCH:
-            return { ...state, [PRODUCTENUM.SEARCH]: action.value }
-        default:
-            state
-    }
-
-}
+export default Products

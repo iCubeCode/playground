@@ -1,12 +1,13 @@
 import React from 'react'
-import './Header.css'
+import "./Header.css"
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { getCartData } from '../../Redux/Slices/ProductsSlice'
+import { getCartData } from '../../Redux/Slices/productSlice'
 
 function Header() {
 
     const navigate = useNavigate()
+
     const cart = useSelector(getCartData)
 
     return (

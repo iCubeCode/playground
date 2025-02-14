@@ -10,6 +10,7 @@
     5. useSelector
     6. useReducer
 
+### React Router DOM
 
 ### Higher Order Component
 
@@ -20,9 +21,12 @@
     2. How to create redux slices
     3. How to use redux
 
-### Error Boundary
-
 ### Creation of Layouts to render the components.
+
+
+
+
+
 
 
 
@@ -101,51 +105,3 @@ NOTE: have the above URL of Image inside the background-image property
 
 
 ------------------------------------------
-
-
-
-Video Plan
-
-1. Introduction and Demo    - 5 Mints
-
-    Show the demo
-
-    Show what are all things they will going to learn from this video
-
-
-2. Project Setup and data showcase - 2 Mints
-
-3. Start with Folder Structure - 2 Mints
-
-    a. Create all folders
-    b. vite.config.js - server
-
-4. establish the React Router DOM - >5 Mints
-
-5. Creation of Header - <20 Mints
-
-6. Layouts - 5 Mints
-
-7. Home Screen -20 Mints 
-    a. Slider  - 10 Mints
-    b. Categories - 10 Mints
-
-8. Products Screen - 50 Mints
-    a. BreadCrumb - 5 Mints
-    b. Filters - 10 Mints
-    c. Product Card - 20 Mints
-    d. Filter Functionality using useMemo - 15 Mints
-
-9. Redux Initializing - 5 Mints
-
-10. Cart Screen - 30 Mints
-
-11. Wishlist Screen and implementing wishlish in Product Card - 20 Mints
-
-12. Orders Screen - 20 Mints
-
-13. useReducer in Products for Filters... - 10 Mints
-
-
-DONE 192 mints 
-

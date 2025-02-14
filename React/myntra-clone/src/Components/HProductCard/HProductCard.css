@@ -43,7 +43,7 @@
     border-radius: 5px;
 }
 
-.h_product_qty {
+.h_product_qty span {
     font-weight: 600;
     font-size: 14px;
     color: #535766;

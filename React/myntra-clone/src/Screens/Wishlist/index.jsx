@@ -1,58 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import "./Wishlist.css"
-import { getCartData, getProductsData, setCart, setProducts } from '../../Redux/Slices/ProductsSlice'
-import { useDispatch, useSelector } from 'react-redux'
-import EmptyCart from '../../Components/EmptyCart'
 import HProductCard from '../../Components/HProductCard'
+import { useSelector } from 'react-redux'
+import { getProducts } from '../../Redux/Slices/productSlice'
+import EmptyData from '../../Components/EmptyData'
 
 function Wishlist() {
 
-    const dispatch = useDispatch()
-    const products = useSelector(getProductsData)
-    const cart = useSelector(getCartData)
-    const [wishlist, setWishlist] = useState([])
+    const products = useSelector(getProducts)
 
-    useEffect(() => {
-        setWishlist(products.filter((item) => item.wishList))
-    }, [products])
-
-    const handleRemoveWishList = (id) => {
-        dispatch(setProducts(products.map((item) => {
-            if (item.id === id) {
-                return {
-                    ...item,
-                    "wishList": false
-                }
-            } else {
-                return item
-            }
-        })))
-    }
-
-    const handleAddCart = (data) => {
-        if (cart.filter((item) => item.id === data.id).length !== 0) {
-            dispatch(setCart(cart.map((item) => {
-                if (item.id === data.id) {
-                    return {
-                        ...item,
-                        "qty": item.qty + 1
-                    }
-                }
-                else {
-                    return item
-                }
-            })))
-        }
-        else {
-            dispatch(setCart([...cart, data]))
-        }
-        dispatch(setProducts(products.map((item) => {
-            return item.id === data.id ? { ...item, "wishList": false } : item
-        })))
-    }
-
-    if (wishlist.length === 0) {
-        return <EmptyCart />
+    if (products.filter((item) => item.wishList).length === 0) {
+        return <EmptyData />
     }
 
     return (
@@ -61,9 +19,9 @@ function Wishlist() {
                 <span>Wishlist</span>
             </div>
             <div className='wishlist_content'>
-                <span>Total Items : {wishlist.length}</span>
+                <span>Total Items : 1</span>
                 {
-                    wishlist.map((item, index) => {
+                    products.filter((item) => item.wishList).map((item, index) => {
                         return (
                             <HProductCard
                                 key={index}
@@ -73,11 +31,10 @@ function Wishlist() {
                                 price={item.price}
                                 actualPrice={item.MRP}
                                 discount={item.discount}
-                                type='wishlist'
-                                qty={item?.qty}
+                                qty={item.qty}
+                                type={'wishlist'}
+                                id={item.id}
                                 data={item}
-                                closeHandler={handleRemoveWishList}
-                                handleAddCart={handleAddCart}
                             />
                         )
                     })

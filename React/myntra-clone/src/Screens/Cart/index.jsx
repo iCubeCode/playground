@@ -1,64 +1,26 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import "./Cart.css"
-import EmptyCart from '../../Components/EmptyCart'
-import { useDispatch, useSelector } from 'react-redux'
-import { getCartData, getOrdersData, setCart, setOrders } from '../../Redux/Slices/ProductsSlice'
 import HProductCard from '../../Components/HProductCard'
+import { useDispatch, useSelector } from 'react-redux'
+import { getCartData, setCart, setOrders } from '../../Redux/Slices/productSlice'
+import EmptyData from '../../Components/EmptyData'
 
 function Cart() {
 
-    const dispatch = useDispatch()
     const cart = useSelector(getCartData)
-    const orders = useSelector(getOrdersData)
 
-    const [totalAmount, setTotalAmount] = useState(0)
+    const dispatch = useDispatch()
 
     const handlePlaceOrder = () => {
-        if (orders.length !== 0) {
-            dispatch(setOrders(orders.map((item) => {
-                if (cart.filter((val) => val.id === item.id).length !== 0) {
-                    return {
-                        ...item,
-                        "qty": item.qty + cart.filter((val) => val.id === item.id)[0].qty
-                    }
-                }
-                else {
-                    return item
-                }
-            })))
-        } else {
-            dispatch(setOrders(cart))
-        }
+
+        dispatch(setOrders(cart))
         dispatch(setCart([]))
+
     }
 
-    const handleRemoveItem = (id) => {
-        dispatch(setCart(cart.filter(item => item.id !== id)))
-    }
-
-    function getTotalAmount(list) {
-        if (list.length === 1) {
-            return parseInt(list[0].price * list[0].qty)
-        } else {
-            // return list.reduce((a, b) => (parseInt(a.price) * parseInt(a.qty)) + (parseInt(b.price) * parseInt(b.qty)))
-            return list.reduce((a, b) => {
-                return a + (parseInt(b.price) * parseInt(b.qty))
-            }, 0)
-        }
-    }
-
-    const handleQty = (id, value) => {
-        dispatch(setCart(cart.map((item) => {
-            return item.id === id ? { ...item, 'qty': parseInt(value) } : item
-        })))
-    }
-
-    useEffect(() => {
-        setTotalAmount(getTotalAmount(cart))
-    }, [cart])
 
     if (cart.length === 0) {
-        return <EmptyCart />
+        return <EmptyData />
     }
 
     return (
@@ -83,13 +45,14 @@ function Cart() {
                                         actualPrice={item.MRP}
                                         discount={item.discount}
                                         qty={item.qty}
-                                        closeHandler={handleRemoveItem}
+                                        type={'cart'}
+                                        id={item.id}
                                         data={item}
-                                        handleQty={handleQty}
                                     />
                                 )
                             })
                         }
+
                     </div>
                 </div>
             </div>
@@ -104,7 +67,7 @@ function Cart() {
                         <tr>
                             <td>Total MRP</td>
                             <td></td>
-                            <td>₹{totalAmount}</td> {/* Reducer function*/}
+                            <td>₹{getTotalAmount(cart)}</td> {/* Reducer function*/}
                         </tr>
                         <tr>
                             <td>Platform free</td>
@@ -119,7 +82,7 @@ function Cart() {
                         <tr className='total_amount'>
                             <td>Total Amount</td>
                             <td></td>
-                            <td>₹{totalAmount}</td> {/* Reducer function*/}
+                            <td>₹{getTotalAmount(cart)}</td> {/* Reducer function*/}
                         </tr>
                     </table>
                     <button onClick={handlePlaceOrder}>PLACE ORDER</button>
@@ -129,4 +92,13 @@ function Cart() {
     )
 }
 
-export default Cart
+export default Cart;
+
+
+function getTotalAmount(list) {
+
+    return list.reduce((a, b) => {
+        return a + (parseInt(b.price) * parseInt(b.qty))
+    }, 0)
+
+}
