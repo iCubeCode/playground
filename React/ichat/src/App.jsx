@@ -66,7 +66,7 @@ function App() {
   }
 
   const handleFetch = async (text, id, allChats) => {
-    let response = await axios.post("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyD5H_kIYapZHENWWhyIbc-vi9p4dzz6zG8", {
+    let response = await axios.post("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=[YOUR_API_KEY_HERE]", {
       "contents": [{
         "parts": [{ "text": text }]
       }]
