@@ -1,23 +1,20 @@
 import React from 'react'
 import "./Cart.css"
 import HProductCard from '../../Components/HProductCard'
-import { useDispatch, useSelector } from 'react-redux'
-import { getCartData, setCart, setOrders } from '../../Redux/Slices/productSlice'
+import { useSelector, useDispatch } from 'react-redux'
 import EmptyData from '../../Components/EmptyData'
+import { setCart, setOrders } from '../../Redux/Slice/productSlice'
 
 function Cart() {
 
-    const cart = useSelector(getCartData)
-
     const dispatch = useDispatch()
 
-    const handlePlaceOrder = () => {
+    const cart = useSelector(state => state.product.cart)
 
+    const handlePlaceOrder = () => {
         dispatch(setOrders(cart))
         dispatch(setCart([]))
-
     }
-
 
     if (cart.length === 0) {
         return <EmptyData />
@@ -35,24 +32,13 @@ function Cart() {
                     <div className='cart_item_container'>
                         {
                             cart.map((item, index) => {
-                                return (
-                                    <HProductCard
-                                        key={index}
-                                        image={item.imgURIs[0]}
-                                        brand={item.brand}
-                                        name={item.name}
-                                        price={item.price}
-                                        actualPrice={item.MRP}
-                                        discount={item.discount}
-                                        qty={item.qty}
-                                        type={'cart'}
-                                        id={item.id}
-                                        data={item}
-                                    />
-                                )
+                                return <HProductCard
+                                    data={item}
+                                    key={index}
+                                    type={'cart'}
+                                />
                             })
                         }
-
                     </div>
                 </div>
             </div>
@@ -62,26 +48,22 @@ function Cart() {
                     <button>APPLY</button>
                 </div>
                 <div className='cart_bill'>
-                    <span>PRICE DETAILS (1 item)</span>
+                    <span>PRICE DETAILS ({cart.length} item)</span>
                     <table>
                         <tr>
                             <td>Total MRP</td>
-                            <td></td>
                             <td>₹{getTotalAmount(cart)}</td> {/* Reducer function*/}
                         </tr>
                         <tr>
                             <td>Platform free</td>
-                            <td></td>
                             <td>₹0</td>
                         </tr>
                         <tr>
                             <td>Shipping free</td>
-                            <td></td>
                             <td>₹0</td>
                         </tr>
                         <tr className='total_amount'>
                             <td>Total Amount</td>
-                            <td></td>
                             <td>₹{getTotalAmount(cart)}</td> {/* Reducer function*/}
                         </tr>
                     </table>

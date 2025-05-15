@@ -1,0 +1,143 @@
+/* https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png*/
+
+.myntra_header {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #e4e4e4;
+    user-select: none;
+}
+
+.header_navigation {
+    width: 50%;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.header_logo {
+    width: 55px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: -290px -60px;
+    background-image: url("https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png");
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav_item {
+    height: 12vh;
+    padding: 0 20px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.nav_item span {
+    font-size: 12px;
+    font-weight: 550;
+    letter-spacing: 1px;
+}
+
+.nav_item_men:hover {
+    border-bottom: 3px solid #ee5f73;
+}
+
+.nav_item_women:hover {
+    border-bottom: 3px solid #fb56c1;
+}
+
+.nav_item_kids:hover {
+    border-bottom: 3px solid #f26a10;
+}
+
+.nav_item_home:hover {
+    border-bottom: 3px solid #f2c210;
+}
+
+.nav_item_beauty:hover {
+    border-bottom: 3px solid #0db7af;
+}
+
+.header_nav {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.header_search {
+    flex: 1;
+    position: relative;
+}
+
+.header_search input {
+    width: 90%;
+    height: 45px;
+    background: #f5f5f6;
+    border: none;
+    outline: none;
+    padding-left: 36px;
+}
+
+.search_icon {
+    position: absolute;
+    top: 0;
+    left: -5px;
+    width: 50px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: -1508px 0;
+    scale: 0.4;
+    background-image: url("https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png");
+}
+
+.header_items {
+    display: flex;
+}
+
+.header_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.header_item:hover {
+    scale: 1.1;
+}
+
+.header_item span {
+    font-size: 12px;
+}
+
+.orders_icon {
+    width: 50px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: -505px -110px;
+    scale: 0.6;
+    background-image: url("https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png");
+}
+
+.heart_icon {
+    width: 35px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: -630px -160px;
+    scale: 0.6;
+    background-image: url("https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png");
+}
+
+.cart_icon {
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: -685px -116px;
+    scale: 0.6;
+    background-image: url("https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png");
+}

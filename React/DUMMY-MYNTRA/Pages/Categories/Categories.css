@@ -1,0 +1,22 @@
+.categories {
+    margin-top: 10px;
+}
+
+.categories_header {
+    padding: 20px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    color: red;
+}
+
+.category_row {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.category_row img {
+    width: 16%;
+    cursor: pointer;
+}

@@ -1,0 +1,90 @@
+.h_product_container {
+    width: 600px;
+    display: flex;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    gap: 20px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.h_product_image {
+    width: 20%;
+}
+
+.h_product_image img {
+    width: 100%;
+}
+
+.h_product_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.h_product_info span {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.h_product_info p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #535766;
+    margin-top: 5px;
+}
+
+.h_product_qty select {
+    border: none;
+    outline: none;
+    border: 1px solid #5d5d5d;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.h_product_qty span {
+    font-weight: 600;
+    font-size: 14px;
+    color: #535766;
+}
+
+.h_product_qty button {
+    padding: 5px 10px;
+    border: 1px solid #FF905A;
+    background: transparent;
+    color: #FF905A;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.h_product_price p {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.h_product_price p del {
+    color: #7E818C;
+    font-weight: 300;
+}
+
+.h_product_price p span {
+    color: #FF905A;
+}
+
+.h_product_close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: -830px -82px;
+    background-image: url("https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png");
+    cursor: pointer;
+    scale: 0.8;
+}
+
+.h_product_close:active {
+    scale: 0.75;
+}

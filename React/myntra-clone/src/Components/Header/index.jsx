@@ -2,19 +2,16 @@ import React from 'react'
 import "./Header.css"
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { getCartData } from '../../Redux/Slices/productSlice'
 
 function Header() {
 
     const navigate = useNavigate()
 
-    const cart = useSelector(getCartData)
-
+    const cart = useSelector(state => state.product.cart)
     return (
         <div className='myntra_header'>
             <div className='header_navigation'>
-                <div className='header_logo' onClick={() => navigate('/')}>
-                </div>
+                <div className='header_logo' onClick={() => navigate('/')}></div>
                 <div className='nav'>
                     <div className='nav_item nav_item_men' onClick={() => navigate('/products')}>
                         <span>MEN</span>

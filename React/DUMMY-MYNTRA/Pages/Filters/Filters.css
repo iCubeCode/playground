@@ -1,0 +1,79 @@
+.filters {
+    width: 18%;
+    border-right: 1px solid #dedede;
+}
+
+.filters_header {
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filters_header span {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.filters_header i {
+    width: 29px;
+    height: 29px;
+    background-image: url("https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png");
+    background-repeat: no-repeat;
+    background-position: -343px -167px;
+    display: block;
+    cursor: pointer;
+}
+
+.filters_header i:active {
+    rotate: -220deg;
+}
+
+.filters_search {
+    border-bottom: 1px solid #dedede;
+    padding: 20px;
+}
+
+.filters_search span {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.filters_search input {
+    margin-top: 5px;
+    height: 30px;
+    width: 100%;
+    padding-left: 12px;
+    outline: none;
+    border: none;
+    background: #f2efef;
+    font-size: 12px;
+}
+
+.filters_price {
+    border-bottom: 1px solid #dedede;
+    padding: 20px;
+}
+
+.filters_price span {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.high_low_filter {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.high_low_filter input {
+    width: 15px;
+    cursor: pointer;
+}
+
+.high_low_filter label {
+    cursor: pointer;
+}

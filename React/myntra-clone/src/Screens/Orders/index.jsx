@@ -2,12 +2,11 @@ import React from 'react'
 import "./Orders.css"
 import HProductCard from '../../Components/HProductCard'
 import { useSelector } from 'react-redux'
-import { getOrdersData } from '../../Redux/Slices/productSlice'
 import EmptyData from '../../Components/EmptyData'
 
 function Orders() {
 
-    const orders = useSelector(getOrdersData)
+    const orders = useSelector(state => state.product.orders)
 
     if (orders.length === 0) {
         return <EmptyData />
@@ -22,21 +21,11 @@ function Orders() {
                 <span>Total Items : {orders.length}</span>
                 {
                     orders.map((item, index) => {
-                        return (
-                            <HProductCard
-                                key={index}
-                                image={item.imgURIs[0]}
-                                brand={item.brand}
-                                name={item.name}
-                                price={item.price}
-                                actualPrice={item.MRP}
-                                discount={item.discount}
-                                qty={item.qty}
-                                type={'cart'}
-                                id={item.id}
-                                data={item}
-                            />
-                        )
+                        return <HProductCard
+                            data={item}
+                            key={index}
+                            type={'orders'}
+                        />
                     })
                 }
             </div>

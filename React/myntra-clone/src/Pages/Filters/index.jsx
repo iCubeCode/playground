@@ -3,8 +3,8 @@ import "./Filters.css"
 
 function Filters({
     search,
-    price,
     setSearch,
+    price,
     setPrice
 }) {
 
@@ -36,7 +36,7 @@ function Filters({
                         id='highlow'
                         name='price'
                         value={'highlow'}
-                        checked={price === 'highlow'}
+                        checked={price === "highlow"}
                         onChange={(e) => setPrice(e.target.value)}
                     />
                     <label htmlFor='highlow'>High to Low</label>
@@ -47,7 +47,7 @@ function Filters({
                         id='lowhigh'
                         name='price'
                         value={'lowhigh'}
-                        checked={price === 'lowhigh'}
+                        checked={price === "lowhigh"}
                         onChange={(e) => setPrice(e.target.value)}
                     />
                     <label htmlFor='lowhigh'>Low to High</label>

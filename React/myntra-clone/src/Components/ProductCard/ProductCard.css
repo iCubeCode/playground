@@ -38,10 +38,10 @@
 
 .product_empty_heart {
     position: absolute;
-    width: 38px;
-    height: 33px;
     top: 5px;
     right: 5px;
+    width: 38px;
+    height: 33px;
     background-image: url("https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png");
     background-repeat: no-repeat;
     background-position: -628px -169px;

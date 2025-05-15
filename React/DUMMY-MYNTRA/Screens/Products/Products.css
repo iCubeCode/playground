@@ -1,0 +1,23 @@
+.products {
+    padding: 12px 0;
+}
+
+.products_container {
+    display: flex;
+}
+
+.products_content {
+    flex: 1;
+    padding: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-items: start;
+    justify-content: center;
+}
+
+.breadcrumb {
+    font-size: 12px;
+    padding: 10px;
+    letter-spacing: 0.8px;
+}

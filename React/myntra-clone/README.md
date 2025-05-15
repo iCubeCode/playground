@@ -2,6 +2,10 @@
 
 ## Here are the topics which you can learn from this.
 
+### React Router DOM
+
+### Creation of Layouts to render the components.
+
 ### Hooks:
     1. useState
     2. useMemo
@@ -10,18 +14,22 @@
     5. useSelector
     6. useReducer
 
-### React Router DOM
-
-### Higher Order Component
-
-    1. memo: It is a higher-order component (HOC) used to optimize performance by preventing re-renders of a component when its props haven't changed;
-
 ### Redux tookit
     1. How to Initialize the redux toolkit
     2. How to create redux slices
     3. How to use redux
 
-### Creation of Layouts to render the components.
+### Higher Order Component
+
+    1. memo: It is a higher-order component (HOC) used to optimize performance by preventing re-renders of a component when its props haven't changed;
+
+
+
+
+
+
+
+
 
 
 

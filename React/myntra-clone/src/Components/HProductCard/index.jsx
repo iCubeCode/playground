@@ -1,78 +1,88 @@
 import React from 'react'
 import "./HProductCard.css"
 import { useDispatch, useSelector } from 'react-redux'
-import { getCartData, getProducts, setCart, setProducts } from '../../Redux/Slices/productSlice'
+import { setCart, setProducts } from '../../Redux/Slice/productSlice'
 
 function HProductCard({
-    image,
-    brand,
-    name,
-    price,
-    actualPrice,
-    discount,
-    qty,
-    type,
-    id,
-    data
+    data,
+    type
 }) {
 
-    const cart = useSelector(getCartData)
-    const products = useSelector(getProducts)
     const dispatch = useDispatch()
 
-    const handleRemove = () => {
+    const cart = useSelector(state => state.product.cart)
+    const products = useSelector(state => state.product.products)
+
+    const handleRemoveItem = () => {
         if (type === 'cart') {
-            dispatch(setCart(cart.filter((item) => item.id !== id)))
+            dispatch(setCart(cart.filter((item) => item.id !== data.id)))
         }
         else {
-            dispatch(setProducts(products.map((item) => item.id === id ? { ...item, "wishList": false } : item)))
+            dispatch(setProducts(products.map((item) => item.id === data.id ? { ...item, "wishList": false } : item)))
         }
+
     }
 
-    const handleChangeQTY = (event) => {
 
-        let value = event.target.value
+    const handleQty = (event) => {
 
-        dispatch(setCart(cart.map((item) => {
-            return item.id === id ? { ...item, "qty": value } : item
-        })))
+        let values = cart.map((item) => {
+            if (item.id === data.id) {
+                return { ...item, "qty": parseInt(event.target.value) }
+            }
+            else {
+                return item
+            }
+        })
+
+        dispatch(setCart(values))
 
     }
 
     const handleAddToCart = () => {
-        let values = cart.filter(item => item.id === id)
 
-        if (values.length !== 0) {
-            // increase qty
-
-            let output = cart.map((item) => {
-
-                return item.id === id ? { ...item, "qty": item.qty + 1 } : item
-
-            })
-
-            dispatch(setCart(output))
-
+        if (cart.length === 0) {
+            dispatch(setCart([data]))
+            return
         }
-        else {
+
+        let isExists = cart.filter((item) => item.id === data.id)
+
+        if (isExists.length === 0) {
+            // doesn't exists
             dispatch(setCart([...cart, data]))
         }
+        else {
+            // it exists
+            let values = cart.map((item) => {
+                if (item.id === data.id) {
+                    return { ...item, "qty": item.qty + 1 }
+                }
+                else {
+                    return item
+                }
+            })
+
+            dispatch(setCart(values))
+        }
+
+
     }
 
     return (
         <div className='h_product_container'>
             <div className='h_product_image'>
-                <img src={image} alt={image} />
+                <img src={data.imgURIs[0]} alt={data.imgURIs[0]} />
             </div>
             <div className='h_product_details'>
                 <div className='h_product_info'>
-                    <span>{brand}</span>
-                    <p>{name}</p>
+                    <span>{data.brand}</span>
+                    <p>{data.name}</p>
                 </div>
                 <div className='h_product_qty'>
                     {
                         type === 'cart' && (
-                            <select value={qty} onChange={handleChangeQTY}>
+                            <select value={data.qty} onChange={handleQty}>
                                 <option value={1}>Qty.1</option>
                                 <option value={2}>Qty.2</option>
                                 <option value={3}>Qty.3</option>
@@ -86,22 +96,28 @@ function HProductCard({
                             </select>
                         )
                     }
+
+                    {
+                        type === 'orders' && (
+                            <span>Qty. {data.qty}</span>
+                        )
+                    }
                     {
                         type === 'wishlist' && (
                             <button onClick={handleAddToCart}>Add to Cart</button>
                         )
                     }
-                    {
-                        type === 'orders' && (
-                            <span>Qty: {qty}</span>
-                        )
-                    }
+
                 </div>
                 <div className='h_product_price'>
-                    <p>Rs. {price} <del>Rs.{actualPrice}</del> <span>{`(${discount}%) OFF`}</span></p>
+                    <p>Rs. {data.price} <del>Rs.{data.MRP}</del> <span>{`(${data.discount}%) OFF`}</span></p>
                 </div>
             </div>
-            <div className='h_product_close' onClick={handleRemove}></div>
+            {
+                type !== 'orders' && (
+                    <div className='h_product_close' onClick={handleRemoveItem}></div>
+                )
+            }
         </div>
     )
 }

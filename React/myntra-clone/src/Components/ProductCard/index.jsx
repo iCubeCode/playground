@@ -1,41 +1,52 @@
 import React, { memo } from 'react'
 import "./ProductCard.css"
 import { useDispatch, useSelector } from 'react-redux'
-import { getCartData, getProducts, setCart, setProducts } from '../../Redux/Slices/productSlice'
+import { setCart, setProducts } from '../../Redux/Slice/productSlice'
 
 const ProductCard = memo(({ data }) => {
 
     const dispatch = useDispatch()
 
-    const cartData = useSelector(getCartData)
-    const products = useSelector(getProducts)
+    const cart = useSelector(state => state.product.cart)
+    const products = useSelector(state => state.product.products)
 
     const handleAddToCart = () => {
 
-        let values = cartData.filter(item => item.id === data.id)
+        if (cart.length === 0) {
+            dispatch(setCart([data]))
+            return
+        }
 
-        if (values.length !== 0) {
-            // increase qty
+        let isExists = cart.filter((item) => item.id === data.id)
 
-            let output = cartData.map((item) => {
-
-                return item.id === data.id ? { ...item, "qty": item.qty + 1 } : item
-
-            })
-
-            dispatch(setCart(output))
-
+        if (isExists.length === 0) {
+            // doesn't exists
+            dispatch(setCart([...cart, data]))
         }
         else {
-            dispatch(setCart([...cartData, data]))
-        }
+            // it exists
+            let values = cart.map((item) => {
+                if (item.id === data.id) {
+                    return { ...item, "qty": item.qty + 1 }
+                }
+                else {
+                    return item
+                }
+            })
 
+            dispatch(setCart(values))
+        }
 
 
     }
-    console.log('Hi')
+
     const handleWishlist = () => {
-        dispatch(setProducts(products.map((item) => item.id === data.id ? { ...item, "wishList": !data.wishList } : item)))
+
+        let values = products.map((item) => {
+            return item.id === data.id ? { ...item, "wishList": !item.wishList } : item
+        })
+
+        dispatch(setProducts(values))
     }
 
     return (

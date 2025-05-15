@@ -1,91 +1,97 @@
-import React, { useMemo, useReducer } from 'react'
+import React, { useState, useMemo, useReducer } from 'react'
 import "./Products.css"
 import Filters from '../../Pages/Filters'
 import ProductCard from '../../Components/ProductCard'
 import { useSelector } from 'react-redux'
-import { getProducts } from '../../Redux/Slices/productSlice'
 
 
-const Filter_Enum = {
+const FILTER_ENUM = {
     "SEARCH": "search",
     "PRICE": "price"
 }
 
 const initialState = {
-    [Filter_Enum.SEARCH]: '',
-    [Filter_Enum.PRICE]: ''
+    [FILTER_ENUM.SEARCH]: "",
+    [FILTER_ENUM.PRICE]: ""
 }
 
 function reducer(state, action) {
 
     switch (action.type) {
-        case Filter_Enum.SEARCH:
-            return { ...state, [Filter_Enum.SEARCH]: action.payload }
-        case Filter_Enum.PRICE:
-            return { ...state, [Filter_Enum.PRICE]: action.payload }
+        case FILTER_ENUM.SEARCH:
+            return { ...state, [FILTER_ENUM.SEARCH]: action.payload }
+        case FILTER_ENUM.PRICE:
+            return { ...state, [FILTER_ENUM.PRICE]: action.payload }
         default:
             return state
     }
 
 }
 
-
 function Products() {
 
     const [state, dispatcher] = useReducer(reducer, initialState)
 
-    const products = useSelector(getProducts)
+    const products = useSelector((state) => state.product.products)
 
-    const filteredProcducts = useMemo(() => {
+    const filteredProducts = useMemo(() => {
 
         if (state.search !== '' || state.price !== '') {
-            // filters
 
-            let output = [...products].filter((item) => {
+
+            let output = products.filter((item) => {
 
                 let name = false
                 let brand = false
+
 
                 name = item.name.toLowerCase().includes(state.search.toLowerCase())
                 brand = item.brand.toLowerCase().includes(state.search.toLowerCase())
 
                 return name || brand
+
             })
 
             if (state.price === 'highlow') {
-                return output.sort((a, b) => b.price - a.price)
+                output = output.sort((a, b) => b.price - a.price)
             }
             else {
-                return output.sort((a, b) => a.price - b.price)
+                output = output.sort((a, b) => a.price - b.price)
             }
+
+            return output
+
+
         }
         else {
             return products
         }
 
+
     }, [state, products])
+
+    const [text, setText] = useState('')
 
     return (
         <div className='products'>
             <div className='breadcrumb'>
                 <p>Home / Clothing / <b>Products</b></p>
+                <input type='text' placeholder='write' value={text} onChange={(e) => setText(e.target.value)} />
             </div>
             <div className='products_container'>
                 <Filters
                     search={state.search}
+                    setSearch={(value) => dispatcher({ type: FILTER_ENUM.SEARCH, payload: value })}
                     price={state.price}
-                    setSearch={(value) => dispatcher({ type: Filter_Enum.SEARCH, payload: value })}
-                    setPrice={(value) => dispatcher({ type: Filter_Enum.PRICE, payload: value })}
+                    setPrice={(value) => dispatcher({ type: FILTER_ENUM.PRICE, payload: value })}
                 />
                 <div className='products_content'>
                     {
-                        filteredProcducts.map((item, index) => {
-                            return (
-                                <ProductCard
-                                    key={index}
-                                    data={item}
-                                />
-                            )
+                        filteredProducts.map((item, index) => {
+                            return <ProductCard
+                                data={item}
+                                key={index}
+                            />
                         })
                     }
                 </div>

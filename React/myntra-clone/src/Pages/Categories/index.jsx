@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Categories.css"
-import { useNavigate } from 'react-router-dom';
 import { MyntraData } from '../../data';
+import { useNavigate } from 'react-router-dom';
 
 function Categories() {
     return (
